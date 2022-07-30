@@ -13,6 +13,7 @@ using UnityEditor;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 using MinAttribute = PixLi.MinAttribute;
+using System.IO;
 
 namespace PixLi
 {
@@ -22,7 +23,9 @@ namespace PixLi
 		[SerializeField] private float _defaultTimeScale = 1f;
 		public float DefaultTimeScale => this._defaultTimeScale;
 
+#if UNITY_EDITOR
 		protected override string GetInstanceDirectoryPath() => PathUtility.GetScriptFileDirectoryPath();
+#endif
 
 		//protected virtual void OnDrawGizmos()
 		//{
